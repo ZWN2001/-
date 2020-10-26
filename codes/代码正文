@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        String[][] str=new String[2*n][2*n];    //二维数组
+
+        //填充数组
+        String aim=new String("*");
+        String a=new String(" ");
+        for (int i=0;i<2*n;i++){
+            for (int j=0;j<2*n;j++){
+               str[i][j]=a;
+            }
+        }
+        for (int i=0;i<=n-1;i++){
+            str[i][n-i-1]=aim;
+            str[i][n+i-1]=aim;
+        }
+        for (int i=2*n-2;i>=n;i--){
+            str[i][i-n+1]=aim;
+            str[i][3*n-i-3]=aim;
+        }
+
+        //循环输出
+        for (int i=0;i<2*n;i++){
+            for (int j=0;j<2*n;j++){
+                System.out.print(str[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
