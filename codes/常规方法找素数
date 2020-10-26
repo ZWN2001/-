@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        int max1 = (int) Math.sqrt(x);
+        int judge1 = 0, judge2 = 0;
+        int count = 0;
+        if (x == 2) {
+            System.out.print("2是素数");
+        } else if (x < 2) {
+            System.out.print(x + "不是素数");
+        } else {
+            for (int i = 2; i <= max1 + 1; i++) {
+                if (x % i == 0) {
+                    judge1 = 1;
+                    break;
+                }
+            }
+            if (judge1 == 0) {
+                System.out.print(x + "是素数");
+            } else {
+                System.out.print(x + "不是素数");
+            }
+        }
+    }
+}
