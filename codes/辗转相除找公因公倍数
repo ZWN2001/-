@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int a=scan.nextInt();
+        int b=scan.nextInt();
+        int n=Math.abs(a*b);
+        int r=a%b;
+        while(r!=0){
+            a=b;
+            b=r;
+            r=a%b;
+        }
+        System.out.println("最大公因数："+b);
+        System.out.println("最小公倍数："+n/b);
+    }
+}
